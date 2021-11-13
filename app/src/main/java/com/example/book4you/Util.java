@@ -71,5 +71,83 @@ public class Util {
         ));
 
 
+        //3
+        id++;
+        name = "Dune";
+        author = "Frank Herbit";
+        price = 10.89;
+        pages = 560;
+        imageURL = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555447414i/44767458.jpg";
+        description = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.";
+        allBooks.add(new Book(
+                id,
+                name,
+                author,
+                description,
+                pages,
+                price,
+                imageURL
+        ));
+
+
+        //4
+        id++;
+        name = "Wish You Were Here";
+        author = "Jodi Picoult";
+        price = 23.45;
+        pages = 214;
+        imageURL = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1622420981i/57700040.jpg";
+        description = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.";
+        allBooks.add(new Book(
+                id,
+                name,
+                author,
+                description,
+                pages,
+                price,
+                imageURL
+        ));
+
+        //5
+        id++;
+        name = "Gilded";
+        author = "Marissa Meyer";
+        price = 10.89;
+        pages = 250;
+        imageURL = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1614276588i/56614597.jpg";
+        description = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.";
+        allBooks.add(new Book(
+                id,
+                name,
+                author,
+                description,
+                pages,
+                price,
+                imageURL
+        ));
+
+        //6
+        id++;
+        name = "Window Shopping";
+        author = "Taisa Bailey";
+        price = 35.69;
+        pages = 352;
+        imageURL = "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1631093429i/58943206.jpg";
+        description = "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.";
+        allBooks.add(new Book(
+                id,
+                name,
+                author,
+                description,
+                pages,
+                price,
+                imageURL
+        ));
+
+
+
+
     }
+
+
 }

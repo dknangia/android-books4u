@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        tools:context=".CheckOutActivity">
+
+        <TextView
+            android:id="@+id/vTxtCheckOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Checkout Page"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <RelativeLayout
+            android:id="@+id/productLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vTxtCheckOut"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/productImage"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                app:srcCompat="@drawable/ic_currency" />
+
+            <TextView
+                android:id="@+id/vTxtProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productImage"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:text="{{Product name}}"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/vTxtProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vTxtProductName"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:text="{{Price}}"
+                android:textSize="20sp">
+
+            </TextView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/userDetailsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productLayout">
+
+            <EditText
+                android:id="@+id/txtFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="24dp"
+                android:hint="Enter full name"
+                android:inputType="textPersonName" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtEmail"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtFullName"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Enter email address"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/txtCardNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinner"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Enter your card number"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtExpiryMMDD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtCardNumber"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Enter card expiry MMDD"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/txtCVCNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtExpiryMMDD"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:hint="Enter CVC"
+                android:inputType="number" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/userActionLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userDetailsLayout"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="50dp">
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="false"
+                android:text="Confirm">
+
+            </Button>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/btnSubmit"
+                android:text="Cancel">
+
+            </Button>
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

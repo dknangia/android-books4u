@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.book4you">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,14 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Book4You">
         <activity
+            android:name=".CheckOutActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookDetailActivity"
-            android:exported="false" android:label="Book Details"/>
+            android:exported="false"
+            android:label="Book Details" />
         <activity
             android:name=".BookListingActivity"
-            android:exported="false" android:label="Browse Books" />
+            android:exported="false"
+            android:label="Browse Books" />
         <activity
             android:name=".AboutUsActivity"
-            android:exported="false" android:label="Our Story" />
+            android:exported="false"
+            android:label="Our Story" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
