@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/drawable/edit_text_border.xml" value="0.2203125" />
         <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/layout/activity_book_detail.xml" value="0.20416666666666666" />
         <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/layout/activity_book_listing.xml" value="0.20416666666666666" />
-        <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/layout/activity_check_out.xml" value="0.20416666666666666" />
+        <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/layout/activity_check_out.xml" value="0.33" />
         <entry key="..\:/Coding/GIT/android/books4u/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Neha/Assignments/Sem4/Neha/Android/Individual/app/src/main/res/layout/activity_about_us.xml" value="0.20416666666666666" />
         <entry key="..\:/Neha/Assignments/Sem4/Neha/Android/Individual/app/src/main/res/layout/activity_book_listing.xml" value="0.20416666666666666" />

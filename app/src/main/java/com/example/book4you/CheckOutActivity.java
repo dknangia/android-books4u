@@ -3,8 +3,12 @@ package com.example.book4you;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.PhoneNumberFormattingTextWatcher;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -20,13 +24,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckOutActivity extends AppCompatActivity {
+    private static final String TAG = "Checkout Activity: ";
     Button btnSubmit, btnCancel;
     TextView vTxtProductName, vTxtProductPrice;
-    EditText textPersonName, txtEmail, txtExpiryMMDD, txtCVCNumber;
+    EditText textPersonName, txtEmail, txtExpiryMMDD, txtCVCNumber, txtProductQuantity;
     Spinner spinner;
     ImageView imgBookCover;
     int bookId;
+    int iProductQuantity = 1;
     ArrayAdapter<String> arrayAdapter;
+    Book incomingBook;
 
     String[] countries = {"India", "USA", "China", "Japan", "Other"};
 
@@ -41,6 +48,31 @@ public class CheckOutActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, countries);
         spinner.setAdapter(arrayAdapter);
 
+
+        txtProductQuantity.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if (!txtProductQuantity.getText().toString().equals("")) {
+                    int i = Integer.parseInt(txtProductQuantity.getText().toString());
+                    Log.d(TAG, "onTextChanged, value of i : " + String.valueOf(i));
+                    if(incomingBook != null) {
+                        vTxtProductPrice.setText("Total cost $" + String.valueOf(i * incomingBook.getPrice()));
+                    }
+                }
+            }
+        });
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,9 +85,17 @@ public class CheckOutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String orderNumber = java.util.UUID.randomUUID().toString();
-                AlertDialog.Builder alert = new AlertDialog.Builder(CheckOutActivity.this);
-                alert.setMessage("You order is recorded and you order number is #" + orderNumber);
-                alert.setTitle("Order successful");
+                AlertDialog.Builder alertBuilder = new AlertDialog.Builder(CheckOutActivity.this);
+                alertBuilder.setMessage("You order is recorded and you order number is #" + orderNumber);
+                alertBuilder.setTitle("Order successful");
+                alertBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(CheckOutActivity.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
+                AlertDialog alert = alertBuilder.create();
                 alert.setCancelable(true);
                 alert.show();
             }
@@ -70,15 +110,18 @@ public class CheckOutActivity extends AppCompatActivity {
             for (Book b : books
             ) {
                 if (b.getId() == bookId) {
+
                     // Bind data to controls
                     vTxtProductName.setText(b.getName());
-                    vTxtProductPrice.setText("$"+String.valueOf(b.getPrice()));
+                    vTxtProductPrice.setText("Total cost $" + String.valueOf(b.getPrice()));
 
                     if (imgBookCover != null && b.getBookImageUrl() != null && b.getBookImageUrl() != "") {
                         Glide.with(this).asBitmap()
                                 .load(b.getBookImageUrl())
                                 .into(imgBookCover);
                     }
+
+                    incomingBook = b;
 
                 }
             }
@@ -98,6 +141,10 @@ public class CheckOutActivity extends AppCompatActivity {
 
         imgBookCover = findViewById(R.id.productImage);
         spinner = findViewById(R.id.spinner);
+        txtProductQuantity = findViewById(R.id.txtProductQuantity);
+        if (txtProductQuantity != null) {
+            txtProductQuantity.setText(String.valueOf(iProductQuantity));
+        }
 
 
     }

@@ -59,9 +59,18 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="32dp"
                 android:text="{{Price}}"
-                android:textSize="20sp">
+                android:textSize="20sp" />
 
-            </TextView>
+            <EditText
+                android:id="@+id/txtProductQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vTxtProductPrice"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/edit_text_border"
+                android:width="40dp"
+                android:text="{{-1}}" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -79,13 +88,6 @@
                 android:hint="Enter full name"
                 android:inputType="textPersonName" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtEmail"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp" />
 
             <EditText
                 android:id="@+id/txtEmail"
@@ -97,35 +99,54 @@
                 android:hint="Enter email address"
                 android:inputType="textEmailAddress" />
 
-            <EditText
-                android:id="@+id/txtCardNumber"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/spinner"
+                android:layout_below="@id/txtEmail"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Enter your card number"
-                android:inputType="number" />
+                android:layout_marginTop="8dp" />
+
+            <RelativeLayout
+                android:id="@+id/cardNumberCCVLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/spinner">
+
+                <EditText
+                    android:id="@+id/txtCardNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="Enter your card number"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/txtCVCNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@id/txtCardNumber"
+                    android:hint="CVC"
+
+                    android:inputType="number" />
+
+            </RelativeLayout>
 
             <EditText
                 android:id="@+id/txtExpiryMMDD"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtCardNumber"
+                android:layout_below="@id/cardNumberCCVLayout"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:hint="Enter card expiry MMDD"
                 android:inputType="number" />
 
-            <EditText
-                android:id="@+id/txtCVCNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtExpiryMMDD"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:hint="Enter CVC"
-                android:inputType="number" />
+
         </RelativeLayout>
 
 
