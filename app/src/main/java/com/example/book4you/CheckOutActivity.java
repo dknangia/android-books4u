@@ -101,6 +101,7 @@ public class CheckOutActivity extends AppCompatActivity {
             }
         });
 
+        // Instead of using bookId, we should use an object passed that will help to save one round trip to server
         Intent intent = getIntent();
         bookId = intent.getIntExtra("bookId", -1);
 
